@@ -227,3 +227,40 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+// === 📩 Formsubmit AJAX Handling ===
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+
+  if (form) {
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          status.style.display = "block";
+          
+          status.textContent = "Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.";
+          form.reset();
+        } else {
+          status.style.display = "block";
+          status.style.color = "red";
+          status.textContent = "Beim Senden der Nachricht ist ein Fehler aufgetreten.";
+        }
+      } catch (error) {
+        status.style.display = "block";
+        status.style.color = "red";
+        status.textContent = "Netzwerkfehler. Bitte versuche es später erneut.";
+      }
+    });
+  }
+});

@@ -821,7 +821,7 @@
               <h3>Kontakt aufnehmen</h3>
               <p>Bleiben Sie mit mir in Kontakt – ich freue mich auf Ihre Nachricht.</p>
 
-              <form action="forms/contact.php" method="post" class="php-email-form">
+              <form id="contact-form" action="https://formspree.io/f/xnnvkdag" method="POST" >
                 <div class="row gy-4">
 
                   <div class="col-md-6">
@@ -841,9 +841,7 @@
                   </div>
 
                   <div class="col-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Deine Nachricht wird gesendet. Danke!</div>
+                    <p id="form-status" style="color:#b38b5e; display: none;">Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.</p>
 
                     <button type="submit" class="btn">Nachricht senden</button>
                   </div>

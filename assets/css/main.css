@@ -2587,6 +2587,14 @@ section,
   }
 }
 
+#form-status {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #b38b5e; /* ta couleur dorée / marron clair */
+}
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
